@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FilipinoLearning</title>
+
+     
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="start-screen">
+      <div class="lobby">
+        <h1 class="main-title">LEARN</h1>
+        <p class="subtitle">Filipino</p>
+        <button class="lobby-button" id="start-button">START</button>
+        <button class="lobby-button2" id="lesson-button">LESSON</button>
+      </div>
+    </div>
+
+    <div id="lesson-container" class="lesson-modal hide">
+      <div class="lesson-content"></div>
+      <style>
+        #lesson-iframe {
+          width: 50%;
+          height: 95%;
+          justify-content: center;
+          align-items: center;
+          
+
+        }
+      </style>
+     <iframe
+      id="lesson-iframe"
+      src="https://docs.google.com/document/d/1c8h9epTBqtWC3FsSQ5F5XABosc-zRiHhM80zKLNYJ4Q/pub?embedded=true"
+      frameborder="0"
+    
+     ></iframe>
+      <button class="close-button" id="close-lesson">Close</button>
+    </div>
+
+    <div id="display-container" class="hide">
+      <div class="header">
+        <div class="number-of-count">
+          <span class="number-of-question">1 of 3 questions</span>
+        </div>
+        <div class="timer-div">
+          <img src="timer3.png" />
+          <span class="time-left">10s</span>
+        </div>
+      </div>
+      <div id="container">
+        <!-- questions and options will be displayed here -->
+      </div>
+      <button id="next-button">Next</button>
+    </div>
+
+    <audio id="correct-sound" src="Correct.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="Wrong.mp3" preload="auto"></audio>
+
+    <div class="score-container hide">
+      <div id="user-score">Demo Score</div>
+      <button id="restart">Restart</button>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

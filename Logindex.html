@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - FilipinoLearning</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="box-container">
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <label for="username">Pangalan:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="Seksyon">Seksyon:</label>
+        <input type="text" id="Seksyon" name="Seksyon" required>
+        <label for="Guro">Guro:</label>
+        <input type="text" id="Guro" name="Guro" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <div class="image-container">
+      <img src="your-image-url-here.jpg" alt="Image">
+    </div>
+  </div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+  
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevent form submission from refreshing the page
+
+      // Get values from the form
+      const username = document.getElementById('username').value;
+      const Seksyon = document.getElementById('Seksyon').value;
+      const Guro = document.getElementById('Guro').value;
+
+      // Perform login validation (you can replace this with your own logic)
+      if (username !== '' && Seksyon !== '' && Guro !== '') {
+        // Show loading screen
+        document.getElementById('loading-screen').style.display = 'flex';
+
+        // Simulate loading for a moment, then redirect to the second page
+        setTimeout(() => {
+          window.location.href = 'index.html';  // Redirect after showing the loading screen
+        }, 2000);  // You can adjust this delay as needed
+      } else {
+        alert('Please fill out all fields');
+      }
+    });
+  </script>
+</body>
+</html>
